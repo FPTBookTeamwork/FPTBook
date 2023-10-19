@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<FPTBook.Models.Book>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img src="~/Image/@item.ImgFileName" class="card-img-top" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title" lang="en">@item.Name</h5>
+                    <p class="card-text" lang="en" style="font-weight: bold; color: red">@item.Price</p>
+                    <div class="card-footer">
+@*                         <p class="card-text" lang="en">@item.Description</p>
+ *@                        <p class="card-text" lang="en">Category: @item.Category.Name</p>
+                        <p class="card-text" lang="en">Author: @item.Author.Name</p>
+                    </div>
+                    <button type="button" class="btn btn-primary">
+                        <a asp-controller="Books" asp-action="Details" asp-route-id="@item.Id" style="color: black">Details</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
