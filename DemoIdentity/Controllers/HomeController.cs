@@ -22,7 +22,7 @@ namespace FPTBookDemo.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        public IActionResult Privacy()
+        public IActionResult Shop()
         {
             return View();
         }
